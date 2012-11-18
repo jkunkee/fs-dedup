@@ -7,9 +7,9 @@
     "type": "git",
     "url": "git://github.com/jkunkee/fs-dedup.git"
   },
-  "bugs": "url": "http://github.com/jkunkee/fs-dedup/issues",
+  "bugs": "http://github.com/jkunkee/fs-dedup/issues",
   "bin": {
-    "dedup": "bin/cli.js"
+    "dedup": "./bin/cli.js"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org"
@@ -20,7 +20,7 @@
     "sequence": ">=2.2.1 <2.3.0",
     "wrench": "1.x"
   },
-  "main": "lib/deduper.js",
+  "main": "./lib/deduper.js",
   "preferGlobal": true,
   "engines": {
     "node": ">=0.8.0 <0.9"
