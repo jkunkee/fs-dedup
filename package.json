@@ -8,6 +8,12 @@
     "url": "git://github.com/jkunkee/fs-dedup.git"
   },
   "bugs": "http://github.com/jkunkee/fs-dedup/issues",
+  "licenses": [
+    {
+      "type": "GPLv2",
+      "url": "http://www.gnu.org/licenses/gpl-2.0.html"
+    }
+  ],
   "bin": {
     "dedup": "./bin/cli.js"
   },
