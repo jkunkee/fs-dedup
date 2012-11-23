@@ -9,9 +9,18 @@
     , flags = []
     , sourceDirs = []
     , destDir
+    , results
     ;
 
-  dedupEmitter = FsDedup.create();
+  function printError(filename) {
+    console.log("error encountered:", filename);
+  }
+  function printProgress(filename) {
+    console.log("starting to work on", filename);
+  }
+  function printResults(result) {
+    console.log("got end:", result);
+  }
 
   process.argv.slice(2, process.argv.length).forEach(function(path, idx) {
     if (/--.*/.test(path)) {
@@ -22,4 +31,12 @@
   });
   console.log("paths:", sourceDirs);
   console.log("flags:", flags);
+
+  dedupEmitter = FsDedup.create({sources: sourceDirs});
+  console.log(dedupEmitter);
+
+  dedupEmitter.on('startFile', printProgress);
+  dedupEmitter.on('end', printResults);
+  dedupEmitter.on('error', printError);
+  dedupEmitter.begin();
 }());
