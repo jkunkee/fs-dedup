@@ -4,7 +4,7 @@
   "use strict";
   
   var path = require('path')
-    , FsDedup = require(path.join(__dirname, '..'))
+    , FsDedup = require(path.join(__dirname, '..', 'lib', 'dedup.js'))
     //, dedupEmitter = FsDedup.create()
     , wrench = require('wrench')
     ;
