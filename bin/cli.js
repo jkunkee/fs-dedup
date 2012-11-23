@@ -5,8 +5,21 @@
   
   var path = require('path')
     , FsDedup = require(path.join(__dirname, '..', 'lib', 'dedup.js'))
-    //, dedupEmitter = FsDedup.create()
-    , wrench = require('wrench')
+    , dedupEmitter
+    , flags = []
+    , sourceDirs = []
+    , destDir
     ;
 
+  dedupEmitter = FsDedup.create();
+
+  process.argv.slice(2, process.argv.length).forEach(function(path, idx) {
+    if (/--.*/.test(path)) {
+      flags.push(path);
+    } else {
+      sourceDirs.push(path);
+    }
+  });
+  console.log("paths:", sourceDirs);
+  console.log("flags:", flags);
 }());
