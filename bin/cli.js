@@ -33,7 +33,6 @@
   console.log("flags:", flags);
 
   dedupEmitter = FsDedup.create({sources: sourceDirs});
-  console.log(dedupEmitter);
 
   dedupEmitter.on('startFile', printProgress);
   dedupEmitter.on('end', printResults);
